@@ -2,6 +2,7 @@ const router = require('express').Router()
 const passport = require('passport')
 
 const User = require("./../models/user"); 
+const auth = require('./../config/auth')
 
 // Showing register form 
 router.get("/register", function (req, res) { 
@@ -33,7 +34,7 @@ router.post("/register", function (req, res) {
   
   
 //Handling user login 
-router.post("/login", passport.authenticate("local", { 
+router.post("/login", auth, passport.authenticate("local", { 
     successRedirect: "/secret", 
     failureRedirect: "/login"
 }), function (req, res) { 

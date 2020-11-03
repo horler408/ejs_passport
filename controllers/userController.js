@@ -35,8 +35,8 @@ router.post("/register", function (req, res) {
   
 //Handling user login 
 router.post("/login", auth, passport.authenticate("local", { 
-    successRedirect: "/secret", 
-    failureRedirect: "/login"
+    successRedirect: "/dashboard", 
+    failureRedirect: "/users/login"
 }), function (req, res) { 
 }); 
   

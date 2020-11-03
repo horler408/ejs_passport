@@ -36,7 +36,7 @@ passport.deserializeUser(User.deserializeUser());
   
 // Routes
 app.use('/', indexRoute)
-app.use('user', userRoute)
+app.use('users', userRoute)
 
 var port = process.env.PORT || 3000; 
 app.listen(port, function () { 
